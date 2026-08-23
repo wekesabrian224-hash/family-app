@@ -1,0 +1,304 @@
+/* ================================
+   LOGIN PAGE
+================================ */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 20% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 30%),
+    radial-gradient(circle at 80% 80%,
+      rgba(255, 255, 255, 0.05),
+      transparent 30%),
+    #050505;
+
+  color: white;
+}
+
+
+/* Cinematic background */
+
+.login-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(120deg,
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.95));
+
+  pointer-events: none;
+}
+
+
+/* ================================
+   LOGIN CARD
+================================ */
+
+.login-card {
+  width: min(430px, 90%);
+
+  position: relative;
+  z-index: 2;
+
+  padding: 45px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 24px;
+
+  background: rgba(20, 20, 20, 0.75);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  animation: loginAppear 1s ease forwards;
+}
+
+
+/* ================================
+   TOP LABEL
+================================ */
+
+.login-label {
+  margin-bottom: 18px;
+
+  font-size: 11px;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.login-card h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 6vw, 58px);
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+}
+
+
+/* Subtitle */
+
+.login-subtitle {
+  margin-top: 16px;
+  margin-bottom: 35px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.login-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* Input group */
+
+.input-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.input-group label {
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+.input-group input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 15px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+.input-group input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.login-button {
+  margin-top: 12px;
+
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: black;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.login-button:hover {
+  transform: translateY(-3px);
+
+  background: #eeeeee;
+
+  box-shadow:
+    0 15px 30px rgba(255, 255, 255, 0.12);
+}
+
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.login-footer {
+  margin-top: 28px;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ================================
+   ANIMATION
+================================ */
+
+@keyframes loginAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0) scale(1);
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .login-card {
+    padding: 30px 24px;
+
+    border-radius: 20px;
+  }
+
+  .login-card h1 {
+    font-size: 42px;
+  }
+
+}

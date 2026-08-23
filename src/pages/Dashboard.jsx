@@ -1,22 +1,39 @@
-import Hero from "../components/Hero";
 import FamilyMembers from "../components/FamilyMembers";
 
-function Dashboard() {
+import "./Dashboard.css";
+
+function Dashboard({ user }) {
   return (
-    <main>
-      <Hero />
+    <main className="dashboard">
+      {/* =====================================
+          CINEMATIC HERO
+      ===================================== */}
 
-      <section id="memories">
-        <FamilyMembers />
+      <section className="dashboard-hero">
+        <div className="dashboard-hero-image">
+          <img src="/images/family.jpg" alt="Our family" />
+        </div>
+
+        <div className="dashboard-hero-overlay"></div>
+
+        <div className="dashboard-hero-content">
+          <p>WELCOME TO OUR PRIVATE SPACE</p>
+
+          <h1>
+            The Family
+            <br />
+            <em>Archive.</em>
+          </h1>
+
+          <span>Memories that belong to us.</span>
+        </div>
       </section>
 
-      <section className="dashboard-message">
-        <p className="eyebrow">OUR HOME</p>
+      {/* =====================================
+          FAMILY MEMBERS
+      ===================================== */}
 
-        <h2>Every moment becomes a memory.</h2>
-
-        <p>Keep our family connected, wherever we are.</p>
-      </section>
+      <FamilyMembers />
     </main>
   );
 }
